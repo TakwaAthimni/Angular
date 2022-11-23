@@ -1,0 +1,18 @@
+<input type="search" [(ngModel)]="prix">
+
+
+<div *ngFor=" let p of ProductList, let i=index ">
+    <div *ngIf="p.price<prix || !prix " class=" card " style="width: 18rem; ">
+
+        <div class="card-body ">
+            <h5 class="card-title ">Produit {{i+1 }} </h5>
+            <p class="card-text ">
+                id: {{p.id }}
+                <br> title:{{p.title }} <br> price:{{p.price }}<br> quantity:{{p.quantity }}<br> like:{{p.like }}</p>
+            <button class="btn btn-success " (click)="buy(i) " [disabled]="p.quantity==0 ">buy</button>
+            <button class="btn btn-primary " (click)="like(i) ">like</button>
+        </div>
+    </div>
+
+
+</div>

@@ -11,8 +11,13 @@
                 <br> title:{{p.title }} <br> price:{{p.price }}<br> quantity:{{p.quantity }}<br> like:{{p.like }}</p>
             <button class="btn btn-success " (click)="buy(i) " [disabled]="p.quantity==0 ">buy</button>
             <button class="btn btn-primary " (click)="like(i) ">like</button>
+            <button class="btn btn-primary " (click)="edit(p.id) ">Update</button>
+            <a [routerLink]="['/editProduct', p.id]">Update</a>
+
         </div>
+        <div>
+            <button class=" btn btn-primary " (click)="routage()">go to user</button>
+        </div>
+
+
     </div>
-
-
-</div>

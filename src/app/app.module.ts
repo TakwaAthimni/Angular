@@ -10,6 +10,7 @@ import { UserComponent } from './user/user.component';
 import { ErrorPComponent } from './error-p/error-p.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { FormulaireProductComponent } from './formulaire-product/formulaire-product.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     UserComponent,
     ErrorPComponent,
     UpdateProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    FormulaireProductComponent
   ],
   imports: [
     BrowserModule,

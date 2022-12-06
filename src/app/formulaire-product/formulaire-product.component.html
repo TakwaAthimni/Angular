@@ -1,0 +1,52 @@
+<form class="container" autocomplete="off" #form="ngForm" (Submit)="Ajouter(form)">
+    <h4>Information Géneral</h4>
+
+    <div class="mb-3 ">
+        <label class="form-label ">Nom  </label>
+        <input class="form-control " type="text " name="Nom " id="Nom " [(ngModel)]="formulaire.Nom " #nom="ngModel" required>
+        <span *ngIf="nom.invalid && nom.touched && nom.errors?.[ 'required'] " style="color:red ">Nom est obligatoire</span>
+
+    </div>
+    <div class="mb-3 ">
+        <label class="form-label ">Email  </label>
+        <input class="form-control " type="text " name="Email " id="Email " [(ngModel)]="formulaire.Email " #email="ngModel" required pattern="[a-z.]+[a-z]+@+[a-z]{3}">
+        <span *ngIf="email.invalid && email.touched && email.errors?.[ 'required'] " style="color:red ">Email est obligatoire </span> <br>
+        <span *ngIf="email.invalid && email.touched && email.errors" style=" color:red ">E-mail est invalid </span>
+
+    </div>
+
+    <h4>Information de Payement</h4>
+    <form class="container " autocomplete="off ">
+
+        <div class="mb-3 ">
+            <label class="form-label ">Type de carte  </label>
+            <input class="form-control " type="text " name="typeCarte " id="typeCarte " [(ngModel)]="formulaire.typeCarte " #typeCarte="ngModel" required>
+            <span *ngIf="typeCarte.invalid && typeCarte.touched && typeCarte.errors?.[ 'required'] " style="color:red ">Type de carte  est obligatoire </span>
+
+        </div>
+        <div class="mb-3 ">
+            <label class="form-label ">Numéro de carte  </label>
+            <input class="form-control " type="text " name="numCarte " id="numCarte " [(ngModel)]="formulaire.numCarte " #numCarte="ngModel" required>
+            <span *ngIf="numCarte.invalid && numCarte.touched && numCarte.errors?.[ 'required'] " style="color:red ">Numéro de carte  est obligatoire </span>
+
+        </div>
+        <div class="mb-3 ">
+            <label class="form-label ">Date expriration  </label>
+            <input class="form-control " type="text " name="dateExp " id="dateExp " [(ngModel)]="formulaire.dateExp " #dateExp="ngModel" required>
+            <span *ngIf="dateExp.invalid && dateExp.touched && dateExp.errors?.[ 'required'] " style="color:red ">Date expriration  est obligatoire </span>
+        </div>
+        <div class="mb-3 ">
+            <label class="form-label ">Code  </label>
+            <input type="text " class="form-control " [disabled]="!typeCarte.valid || !numCarte.valid || !dateExp.valid" type="text " name="code " id="code " [(ngModel)]="formulaire.code " #code="ngModel" required minlength="16 ">
+            <span *ngIf="code.invalid && code.touched && code.errors?.[ 'required'] " style="color:red ">Code est obligatoire </span>
+            <span *ngIf="code.invalid && code.touched && code.errors?.[ 'minlength'] " style="color:red ">Code nécessite au moins 16 chiffres</span>
+
+        </div>
+
+    </form>
+    <div class="form-group ">
+        <div class="d-flex justify-content-center">
+            <input [disabled]="!form.valid" class="form-control " type="submit" value="Ajouter" class="btn btn-primary">
+        </div>
+    </div>
+</form>

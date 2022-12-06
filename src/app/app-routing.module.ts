@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ErrorPComponent } from './error-p/error-p.component';
+import { FormulaireProductComponent } from './formulaire-product/formulaire-product.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'User', component:UserComponent},
   {path:'editProduct/:id', component:UpdateProductComponent},
   {path:'addProduct', component:AddProductComponent},
+  {path:'formulaireProduct', component:FormulaireProductComponent},
   {path:'***', component:ErrorPComponent},
 
 

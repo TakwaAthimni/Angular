@@ -10,7 +10,7 @@
     <div class="mb-3 ">
         <label class="form-label ">Email  </label>
         <input class="form-control " type="text " name="Email " id="Email " [(ngModel)]="formulaire.Email " #email="ngModel" required pattern="[a-z.]+[a-z]+@+[a-z]{3}">
-        <span *ngIf="email.invalid && email.touched && email.errors?.[ 'required'] " style="color:red ">Email est obligatoire </span> <br>
+        <span *ngIf="email.touched && email.errors?.[ 'required'] " style="color:red ">Email est obligatoire </span> <br>
         <span *ngIf="email.invalid && email.touched && email.errors" style=" color:red ">E-mail est invalid </span>
 
     </div>
@@ -26,8 +26,9 @@
         </div>
         <div class="mb-3 ">
             <label class="form-label ">Numéro de carte  </label>
-            <input class="form-control " type="text " name="numCarte " id="numCarte " [(ngModel)]="formulaire.numCarte " #numCarte="ngModel" required>
+            <input class="form-control " type="text " name="numCarte " id="numCarte " [(ngModel)]="formulaire.numCarte " #numCarte="ngModel" required minlength="16 ">
             <span *ngIf="numCarte.invalid && numCarte.touched && numCarte.errors?.[ 'required'] " style="color:red ">Numéro de carte  est obligatoire </span>
+            <span *ngIf="numCarte.invalid && numCarte.touched && numCarte.errors?.[ 'minlength'] " style="color:red ">Numéro de carte nécessite au moins 16 chiffres</span>
 
         </div>
         <div class="mb-3 ">
@@ -37,9 +38,8 @@
         </div>
         <div class="mb-3 ">
             <label class="form-label ">Code  </label>
-            <input type="text " class="form-control " [disabled]="!typeCarte.valid || !numCarte.valid || !dateExp.valid" type="text " name="code " id="code " [(ngModel)]="formulaire.code " #code="ngModel" required minlength="16 ">
+            <input type="text " class="form-control " [disabled]="!typeCarte.valid || !numCarte.valid || !dateExp.valid" type="text " name="code " id="code " [(ngModel)]="formulaire.code " #code="ngModel" required>
             <span *ngIf="code.invalid && code.touched && code.errors?.[ 'required'] " style="color:red ">Code est obligatoire </span>
-            <span *ngIf="code.invalid && code.touched && code.errors?.[ 'minlength'] " style="color:red ">Code nécessite au moins 16 chiffres</span>
 
         </div>
 

@@ -64,7 +64,9 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "e-comerce:build:production"
+                            "browserTarget": "e-comerce:build:production",
+                            "proxyConfig": "proxy.conf.json"
+
                         },
                         "development": {
                             "browserTarget": "e-comerce:build:development"

@@ -11,7 +11,13 @@ import { ErrorPComponent } from './error-p/error-p.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { FormulaireProductComponent } from './formulaire-product/formulaire-product.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './product.service';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ConvertisseurComponentComponent } from './convertisseur-component/convertisseur-component.component';
+import { ToEuroConvertComponentComponent } from './to-euro-convert-component/to-euro-convert-component.component';
+import { ActorsComponentComponent } from './actors-component/actors-component.component';
+import { ActorComponentComponent } from './actor-component/actor-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +27,21 @@ import { FormulaireProductComponent } from './formulaire-product/formulaire-prod
     ErrorPComponent,
     UpdateProductComponent,
     AddProductComponent,
-    FormulaireProductComponent
+    FormulaireProductComponent,
+    ProductItemComponent,
+    ConvertisseurComponentComponent,
+    ToEuroConvertComponentComponent,
+    ActorsComponentComponent,
+    ActorComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

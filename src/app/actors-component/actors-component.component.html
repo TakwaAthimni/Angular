@@ -1,0 +1,5 @@
+<p> List Actors</p>
+<div *ngFor="let a of listActors; let i = index">
+
+    <app-actor-component [actorItem]="a" (sender)=" Delete($event)"></app-actor-component>
+    <div>

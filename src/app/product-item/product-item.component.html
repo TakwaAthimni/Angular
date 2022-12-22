@@ -1,0 +1,19 @@
+<p>product-item works!</p>
+<div class="card-group" *ngIf="productItem.price < prix || prix == null || prix == 0">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Produit </h5>
+            <p class="card-text">
+                Title : {{productItem.title}} <br> Price : {{productItem.price}} <br> Quantity : {{productItem.quantity}} <br> Like : {{productItem.like}} <br>
+            </p>
+
+            <button (click)="Buy(productItem.id)" class="btn btn-success me-md-2" [disabled]="productItem.quantity==0">Buy</button>
+            <button (click)="Like(productItem.id)" class="btn btn-primary me-md-2">Like</button>
+            <button class="btn btn-warning me-md-2" (click)="updateProduct(productItem.id)">Modifier Produit</button>
+            <button class="btn btn-danger me-md-2" (click)="deleteProduct(productItem.id)">Delete Produit</button>
+            <a [routerLink]="['/editProduct',productItem.id]">Modifier 2</a>
+        </div>
+
+    </div>
+</div>
